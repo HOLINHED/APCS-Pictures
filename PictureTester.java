@@ -151,6 +151,44 @@ public class PictureTester
     canvas.explore();
   }
 
+  public static void testGetCountRedOverValue(int val) {
+
+    Picture picture = new Picture("./images/beach.jpg");
+
+    final int c = picture.getRedOverValue(val);
+
+    System.out.println("Red values over " + val + ": " + c);
+  }
+
+  public static void testSetRedToHalfValueInTopHalf() {
+
+    Picture p = new Picture("./images/beach.jpg");
+
+    p.setRedToHalfValueInTopHalf();
+
+    p.explore();
+  }
+
+  public static void testClearBlueOverValue(int val) {
+
+    Picture p = new Picture("./images/snowman.jpg");
+
+    p.clearBlueOverValue(val);
+
+    p.explore();
+  }
+
+  public static void testGetAverageForColumn(int col) {
+
+    Picture p = new Picture("./images/beach.jpg");
+
+    int j = p.getAverageForColumn(col);
+
+    System.out.println(j);
+
+    p.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -174,8 +212,9 @@ public class PictureTester
     //testCopy();
     //myCollage();
     //testEdgeDetection();
+    //----------- below not mentioned in handout. implemented to best of my ability.
     //testChromakey();
-    //testEncodeAndDecode();
+    //testEncodeAndDecode(); // no idea what this one is supposed to do
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);

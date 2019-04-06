@@ -189,6 +189,15 @@ public class PictureTester
     p.explore();
   }
 
+  public static void testChromakey() {
+    Picture background = new Picture("./images/1920x1080.jpg");
+    Picture spooky = new Picture("./images/skeleton.png");
+
+    spooky.chromaKey(background);
+
+    spooky.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -202,7 +211,7 @@ public class PictureTester
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
-    //testFixUnderwater();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
@@ -213,7 +222,7 @@ public class PictureTester
     //myCollage();
     //testEdgeDetection();
     //----------- below not mentioned in handout. implemented to best of my ability.
-    //testChromakey();
+    //testChromakey();  // no images provided for this, so i downloaded some
     //testEncodeAndDecode(); // no idea what this one is supposed to do
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();

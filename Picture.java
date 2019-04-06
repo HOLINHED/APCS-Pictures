@@ -448,6 +448,7 @@ public class Picture extends SimplePicture
     }
   }
 
+  // ADDED
   public int getRedOverValue(int val) {
 
     Pixel[][] pixels = getPixels2D();
@@ -462,6 +463,7 @@ public class Picture extends SimplePicture
     return c;
   }
 
+  // ADDED
   public void setRedToHalfValueInTopHalf() {
     
     Pixel[][] pixels = getPixels2D();
@@ -478,6 +480,7 @@ public class Picture extends SimplePicture
     }
   }
 
+  // ADDED
   public void clearBlueOverValue(int val) {
 
     Pixel[][] pixels = getPixels2D();
@@ -501,6 +504,21 @@ public class Picture extends SimplePicture
        sum += s;
     }
      return sum / matrix.length;
+   }
+
+   // ADDED
+   public void chromaKey(Picture other) {
+
+    Pixel[][] pixels = getPixels2D();
+    Pixel[][] bg = other.getPixels2D();
+
+    for (int y = 0; y < pixels.length; y++) {
+      for (int x = 0; x < pixels[0].length; x++) {
+        if (pixels[y][x].getGreen() >= 209 && pixels[y][x].getGreen() <= 251) {
+          pixels[y][x].setColor(bg[y][x].getColor());
+        }
+      }
+    }
    }
   
   /* Main method for testing - each class in Java can have a main 
